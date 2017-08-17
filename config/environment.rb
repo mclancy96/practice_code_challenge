@@ -3,9 +3,7 @@ Bundler.require
 
 ActiveRecord::Base.establish_connection({
   adapter: 'sqlite3',
-  database: 'db/twitter.db'
+  database: 'db/development.db'
   })
 
-require_relative '../lib/tweet.rb'
-require_relative '../lib/user.rb'
-require_relative '../lib/tweets_app.rb'
+require_all './lib'
