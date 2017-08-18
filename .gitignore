@@ -1,0 +1,3 @@
+db/*.sqlite
+db/*.db
+db/schema.rb
