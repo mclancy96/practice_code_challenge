@@ -133,7 +133,28 @@ For each model, implement the following methods. These are designed to cover a w
 - Book: `.published_before(year)`, `.published_after(year)`, `#genre_count`, `.with_multiple_genres`, `#co_authors`, `.without_genre(genre_name)`, `#all_genre_names`, `.by_title(title)`
 - Genre: `.with_only_one_book`, `.with_no_authors`, `#all_author_names`, `.with_books_published_before(year)`,`.with_no_books`, `#all_book_titles`, `.with_author(author_name)`
 
-You may add additional methods for even more practice, but the above are required for this challenge and will give you comprehensive coverage of ActiveRecord associations, querying, and Ruby method types.
+---
+
+## Running and Writing Tests
+
+This repo uses RSpec for testing. Specs are provided for every required method in the `spec/models/` directory. You should:
+
+- Implement the methods in your models so that all specs pass.
+- Add more specs as you add new methods or want to test edge cases.
+
+### To run all tests:
+
+```sh
+bundle exec rspec
+```
+
+### To run a specific test file:
+
+```sh
+bundle exec rspec spec/models/author_spec.rb
+```
+
+Test files are organized by model. Edit or expand them as you build out your code!
 
 #### Advanced/Bonus Methods (for extra challenge):
 
