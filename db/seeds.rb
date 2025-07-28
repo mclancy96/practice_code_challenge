@@ -4,22 +4,42 @@ Book.destroy_all
 Genre.destroy_all
 BookGenre.destroy_all
 
-# Authors
-rowling = Author.create(name: "J.K. Rowling")
-tolkien = Author.create(name: "J.R.R. Tolkien")
+# Seed genres
+genre_names = [
+  'Fantasy', 'Adventure', 'Science Fiction', 'Mystery', 'Romance', 'Horror', 'Historical', 'Thriller', 'Nonfiction', 'Biography'
+]
+genres = genre_names.map { |name| Genre.create(name: name) }
 
-# Genres
-fantasy = Genre.create(name: "Fantasy")
-adventure = Genre.create(name: "Adventure")
+# Seed authors
+author_names = [
+  'J.K. Rowling', 'J.R.R. Tolkien', 'Isaac Asimov', 'Agatha Christie', 'Jane Austen', 'Stephen King', 'George Orwell', 'Ernest Hemingway', 'Mark Twain', 'Virginia Woolf',
+  'F. Scott Fitzgerald', 'Harper Lee', 'Charles Dickens', 'Leo Tolstoy', 'Emily Brontë', 'Arthur Conan Doyle', 'C.S. Lewis', 'Suzanne Collins', 'J.D. Salinger', 'Margaret Atwood'
+]
+authors = author_names.map { |name| Author.create(name: name) }
 
-# Books
-hp1 = Book.create(title: "Harry Potter and the Sorcerer's Stone", author: rowling)
-hp2 = Book.create(title: "Harry Potter and the Chamber of Secrets", author: rowling)
-lotr = Book.create(title: "The Lord of the Rings", author: tolkien)
+# Helper for random title generation
+adjectives = %w[Lost Secret Dark Bright Silent Hidden Ancient Final Broken Golden Crimson Silver Wild Forgotten Burning
+                Shattered Infinite Whispering]
+nouns = %w[Empire Forest Dream Shadow Flame River Tower Game Code Path Legacy Storm Mirror Song Maze Circle Stone
+           Voyage Machine]
 
-# BookGenres (many-to-many)
-BookGenre.create(book: hp1, genre: fantasy)
-BookGenre.create(book: hp1, genre: adventure)
-BookGenre.create(book: hp2, genre: fantasy)
-BookGenre.create(book: lotr, genre: fantasy)
-BookGenre.create(book: lotr, genre: adventure)
+def random_title(adjectives, nouns)
+  "The #{adjectives.sample} #{nouns.sample}"
+end
+
+books = []
+100.times do |i|
+  author = authors.sample
+  title = random_title(adjectives, nouns) + " #{i + 1}"
+  books << Book.create(title: title, author: author)
+end
+
+# Assign genres to books (each book gets 1-3 genres)
+books.each do |book|
+  genres.sample(rand(1..3)).each do |genre|
+    BookGenre.create(book: book, genre: genre)
+  end
+end
+
+# Optionally, print a summary
+puts "Seeded #{Author.count} authors, #{Genre.count} genres, #{Book.count} books, and #{BookGenre.count} book-genre associations."
