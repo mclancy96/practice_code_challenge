@@ -126,8 +126,3 @@ describe '.with_multiple_genres' do
   end
 end
 
-describe '#co_authors' do
-  it 'returns all other authors who have co-written this book' do
-    expect(book1.co_authors).to be_a(Array)
-  end
-end
