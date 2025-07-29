@@ -17,7 +17,13 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    bundle install
    ```
 
-2. **Create your migrations:**
+2. **Create the database:**
+
+   ```sh
+   bundle exec rake db:create
+   ```
+
+3. **Create your migrations:**
 
    - You are responsible for writing all migration files in `db/migrate/`.
    - At a minimum, create tables for:
@@ -32,24 +38,24 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      bundle exec rake db:create_migration NAME=create_authors
      ```
 
-3. **Run your migrations:**
+4. **Run your migrations:**
 
    ```sh
-   rake db:migrate
+   bundle exec rake db:migrate
    ```
 
-4. **Seed the database:**
+5. **Seed the database:**
 
    - Edit `db/seeds.rb` to add sample data for all tables and associations.
    - Run:
      ```sh
-     rake db:seed
+     bundle exec rake db:seed
      ```
 
-5. **Start an interactive console:**
+6. **Start an interactive console:**
 
    ```sh
-   rake console
+   bundle exec rake console
    ```
 
 ---
