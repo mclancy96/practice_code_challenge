@@ -31,7 +31,8 @@ books = []
 100.times do |i|
   author = authors.sample
   title = random_title(adjectives, nouns) + " #{i + 1}"
-  books << Book.create(title: title, author: author)
+  published_year = rand(1950..2025)
+  books << Book.create(title: title, author: author, published_year: published_year)
 end
 
 # Assign genres to books (each book gets 1-3 genres)
