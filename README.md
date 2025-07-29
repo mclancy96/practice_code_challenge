@@ -16,24 +16,28 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    ```sh
    bundle install
    ```
+
 2. **Create your migrations:**
 
    - You are responsible for writing all migration files in `db/migrate/`.
    - At a minimum, create tables for:
-     - `authors` (with at least a `name` column)
-     - `books` (with at least a `title` column and a reference to `author`)
-     - `genres` (with at least a `name` column)
-     - `book_genres` (join table for books and genres)
+     - `authors` (include a `name` column and timestamps)
+     - `books` (include a `title` column, a reference to `author`, a `published_year` integer column, and timestamps)
+     - `genres` (include a `name` column and timestamps)
+     - `book_genres` (join table for books and genres; include timestamps)
+   - Note: While books can have multiple authors in real-world scenarios, for this challenge we simplify and assume each book has only one author.
    - Use appropriate data types and add timestamps.
    - Example command:
      ```sh
      bundle exec rake db:create_migration NAME=create_authors
      ```
+
 3. **Run your migrations:**
 
    ```sh
    rake db:migrate
    ```
+
 4. **Seed the database:**
 
    - Edit `db/seeds.rb` to add sample data for all tables and associations.
@@ -41,6 +45,7 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      ```sh
      rake db:seed
      ```
+
 5. **Start an interactive console:**
 
    ```sh
@@ -57,6 +62,8 @@ This project uses a simple library domain:
 - **Book** belongs to Author; has many Genres through BookGenres
 - **Genre** has many Books through BookGenres
 - **BookGenre** is a join table for the many-to-many relationship
+
+Note: In reality, books can have multiple authors, but for simplicity, this challenge assumes each book has only one author.
 
 ---
 
