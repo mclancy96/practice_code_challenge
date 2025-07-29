@@ -1,3 +1,5 @@
 db/*.sqlite
 db/*.db
 db/schema.rb
+db/test.sqlite3
+db/development.sqlite3

@@ -1,7 +1,7 @@
 require_relative 'config/environment'
-require "sinatra/activerecord/rake"
+require 'sinatra/activerecord/rake'
 
-desc('Loads up a console!')
+desc 'Runs a Pry console'
 task :console do
   ActiveRecord::Base.logger = Logger.new(STDOUT)
   Pry.start
