@@ -7,10 +7,10 @@ RSpec.describe Author do
   let!(:other_author) { Author.create(name: 'Other Author') }
   let!(:genre1) { Genre.create(name: 'Fantasy') }
   let!(:genre2) { Genre.create(name: 'Mystery') }
-  let!(:book1) { Book.create(title: 'Book One', author: author) }
-  let!(:book2) { Book.create(title: 'Book Two', author: author) }
-  let!(:book3) { Book.create(title: 'Book Three', author: author) }
-  let!(:book4) { Book.create(title: 'Book Four', author: other_author) }
+  let!(:book1) { Book.create(title: 'Book One', author: author, published_year: 1999) }
+  let!(:book2) { Book.create(title: 'Book Two', author: author, published_year: 2005) }
+  let!(:book3) { Book.create(title: 'Book Three', author: author, published_year: 2010) }
+  let!(:book4) { Book.create(title: 'Book Four', author: other_author, published_year: 2003) }
   let!(:bg1) { BookGenre.create(book: book1, genre: genre1) }
   let!(:bg2) { BookGenre.create(book: book2, genre: genre1) }
   let!(:bg3) { BookGenre.create(book: book2, genre: genre2) }
