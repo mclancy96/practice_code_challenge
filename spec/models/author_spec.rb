@@ -109,11 +109,6 @@ RSpec.describe Author do
 end
 
 # Advanced/Bonus Methods
-# describe '.most_prolific' do
-#   it 'returns the author(s) with the highest average books per year (or most books if not implemented)' do
-#     expect(Author.most_prolific).to be_a(Array).or be_a(Author)
-#   end
-# end
 
 # describe '#all_genre_names' do
 #   it 'returns an array of all unique genre names for this author' do
