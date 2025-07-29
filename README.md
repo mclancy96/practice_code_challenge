@@ -16,7 +16,6 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    ```sh
    bundle install
    ```
-
 2. **Create your migrations:**
 
    - You are responsible for writing all migration files in `db/migrate/`.
@@ -30,13 +29,11 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      ```sh
      bundle exec rake db:create_migration NAME=create_authors
      ```
-
 3. **Run your migrations:**
 
    ```sh
    rake db:migrate
    ```
-
 4. **Seed the database:**
 
    - Edit `db/seeds.rb` to add sample data for all tables and associations.
@@ -44,7 +41,6 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      ```sh
      rake db:seed
      ```
-
 5. **Start an interactive console:**
 
    ```sh
@@ -154,17 +150,7 @@ bundle exec rspec
 bundle exec rspec spec/models/author_spec.rb
 ```
 
-Test files are organized by model. Edit or expand them as you build out your code!
-
-#### Advanced/Bonus Methods (for extra challenge):
-
-- Author:
-- Book:
-- Genre:
-
-You may add additional methods for even more practice, but the above are required for this challenge and will give you comprehensive coverage of ActiveRecord associations, querying, and Ruby method types.
-
----
+Test files are organized by model. Edit or expand them as you build out your code!---
 
 ---
 
