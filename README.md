@@ -91,7 +91,6 @@ For each model, implement the following methods. These are designed to cover a w
 - `#books_in_genre(genre_name)` — Returns all books by this author in a given genre
 - `.with_most_books` — Class method: returns the author(s) with the most books
 - `.alphabetical` — Class method: returns all authors sorted by name
-- `#co_authors` — Returns all other authors who have co-written a book with this author (if you add a co-author feature)
 - `#first_book` — Returns the first book written by this author
 - `#last_book` — Returns the last book written by this author
 - `.with_no_books` — Class method: returns all authors with no books
@@ -145,8 +144,8 @@ For each model, implement the following methods. These are designed to cover a w
 Tests exist for these methods in their respective model's spec file. Uncomment them if you'd like to attempt them. Otherwise, leave them commented out to continue with the less advanced methods.
 
 - Author: `#all_genre_names`, `#all_genre_counts`, `.with_books_published_after(year)`
-- Book: `.published_before(year)`, `.published_after(year)`, `#genre_count`, `.with_multiple_genres`, `.without_genre(genre_name)`, `#all_genre_names`, `.by_title(title)`
-- Genre: `.with_only_one_book`, `.with_no_authors`, `#all_author_names`, `.with_books_published_before(year)`,`.with_no_books`, `#all_book_titles`, `.with_author(author_name)`
+- Book: `.published_before(year)`, `.published_after(year)`, `#genre_count`, `.with_multiple_genres`
+- Genre: `.with_only_one_book`, `.with_no_authors`, `#all_author_names`, `.with_books_published_before(year)`
 
 ---
 
