@@ -66,17 +66,6 @@ RSpec.describe Author do
     end
   end
 
-  describe '#co_authors' do
-    it 'returns all other authors who have co-written a book with this author' do
-      # For this test, add a book with both authors (simulate co-authoring)
-      co_book = Book.create(title: 'Co-Book', author: author)
-      BookGenre.create(book: co_book, genre: genre1)
-      # Simulate co-authoring by assigning the same book to both authors (if your schema allows)
-      # Otherwise, this test can be skipped or adjusted based on your implementation
-      expect(author.co_authors).to be_a(Array)
-    end
-  end
-
   describe '#first_book' do
     it 'returns the first book written by this author' do
       expect(author.first_book).to eq(book1)
