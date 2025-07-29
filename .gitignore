@@ -37,6 +37,7 @@ jspm_packages
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
+/db/*.sqlite3-*
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
@@ -44,5 +45,3 @@ jspm_packages
 !/log/.keep
 /tmp
 db/schema.rb
-db/development.sqlite3-shm
-db/development.sqlite3-wal
