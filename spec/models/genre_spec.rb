@@ -119,27 +119,27 @@ RSpec.describe Genre do
 end
 
 # Advanced/Bonus Methods
-# describe '.with_only_one_book' do
-#   it 'returns all genres with only one book' do
-#     expect(Genre.with_only_one_book).to be_a(Array)
-#   end
-# end
+describe '.with_only_one_book' do
+  it 'returns all genres with only one book' do
+    expect(Genre.with_only_one_book).to be_a(Array)
+  end
+end
 
-# describe '.with_no_authors' do
-#   it 'returns all genres with no authors' do
-#     expect(Genre.with_no_authors).to include(genre3)
-#   end
-# end
+describe '.with_no_authors' do
+  it 'returns all genres with no authors' do
+    expect(Genre.with_no_authors).to include(genre3)
+  end
+end
 
-# describe '#all_author_names' do
-#   it 'returns an array of all author names in this genre' do
-#     expect(genre1.all_author_names).to include(author.name)
-#   end
-# end
+describe '#all_author_names' do
+  it 'returns an array of all author names in this genre' do
+    expect(genre1.all_author_names).to include(author.name)
+  end
+end
 
-# describe '.with_books_published_before' do
-#   it 'returns all genres with books published before a given year' do
-#     # This test assumes a published_at or year column exists
-#     expect(Genre.with_books_published_before(2000)).to be_a(Array)
-#   end
-# end
+describe '.with_books_published_before' do
+  it 'returns all genres with books published before a given year' do
+    # This test assumes a published_at or year column exists
+    expect(Genre.with_books_published_before(2000)).to be_a(Array)
+  end
+end

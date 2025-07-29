@@ -109,29 +109,29 @@ RSpec.describe Author do
 end
 
 # Advanced/Bonus Methods
-# describe '.most_prolific' do
-#   it 'returns the author(s) with the highest average books per year (or most books if not implemented)' do
-#     expect(Author.most_prolific).to be_a(Array).or be_a(Author)
-#   end
-# end
+describe '.most_prolific' do
+  it 'returns the author(s) with the highest average books per year (or most books if not implemented)' do
+    expect(Author.most_prolific).to be_a(Array).or be_a(Author)
+  end
+end
 
-# describe '#all_genre_names' do
-#   it 'returns an array of all unique genre names for this author' do
-#     expect(author.all_genre_names).to match_array([genre1.name, genre2.name])
-#   end
-# end
+describe '#all_genre_names' do
+  it 'returns an array of all unique genre names for this author' do
+    expect(author.all_genre_names).to match_array([genre1.name, genre2.name])
+  end
+end
 
-# describe '#all_genre_counts' do
-#   it 'returns a hash of genre name => count for this author' do
-#     result = author.all_genre_counts
-#     expect(result).to be_a(Hash)
-#     expect(result.keys).to include(genre1.name, genre2.name)
-#   end
-# end
+describe '#all_genre_counts' do
+  it 'returns a hash of genre name => count for this author' do
+    result = author.all_genre_counts
+    expect(result).to be_a(Hash)
+    expect(result.keys).to include(genre1.name, genre2.name)
+  end
+end
 
-# describe '.with_books_published_after' do
-#   it 'returns all authors with books published after a given year' do
-#     # This test assumes a published_at or year column exists
-#     expect(Author.with_books_published_after(2000)).to be_a(Array)
-#   end
-# end
+describe '.with_books_published_after' do
+  it 'returns all authors with books published after a given year' do
+    # This test assumes a published_at or year column exists
+    expect(Author.with_books_published_after(2000)).to be_a(Array)
+  end
+end
