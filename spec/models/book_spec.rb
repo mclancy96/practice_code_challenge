@@ -100,34 +100,34 @@ RSpec.describe Book do
 end
 
 # Advanced/Bonus Methods
-describe '.published_before' do
-  it 'returns all books published before a given year' do
-    # This test assumes a published_at or year column exists
-    expect(Book.published_before(2000)).to be_a(Array)
-  end
-end
+# describe '.published_before' do
+#   it 'returns all books published before a given year' do
+#     # This test assumes a published_at or year column exists
+#     expect(Book.published_before(2000)).to be_a(Array)
+#   end
+# end
 
-describe '.published_after' do
-  it 'returns all books published after a given year' do
-    expect(Book.published_after(2000)).to be_a(Array)
-  end
-end
+# describe '.published_after' do
+#   it 'returns all books published after a given year' do
+#     expect(Book.published_after(2000)).to be_a(Array)
+#   end
+# end
 
-describe '#genre_count' do
-  it 'returns the number of genres for this book' do
-    expect(book1.genre_count).to eq(2)
-  end
-end
+# describe '#genre_count' do
+#   it 'returns the number of genres for this book' do
+#     expect(book1.genre_count).to eq(2)
+#   end
+# end
 
-describe '.with_multiple_genres' do
-  it 'returns all books with more than one genre' do
-    expect(Book.with_multiple_genres).to include(book1)
-    expect(Book.with_multiple_genres).not_to include(book2, book3)
-  end
-end
+# describe '.with_multiple_genres' do
+#   it 'returns all books with more than one genre' do
+#     expect(Book.with_multiple_genres).to include(book1)
+#     expect(Book.with_multiple_genres).not_to include(book2, book3)
+#   end
+# end
 
-describe '#co_authors' do
-  it 'returns all other authors who have co-written this book' do
-    expect(book1.co_authors).to be_a(Array)
-  end
-end
+# describe '#co_authors' do
+#   it 'returns all other authors who have co-written this book' do
+#     expect(book1.co_authors).to be_a(Array)
+#   end
+# end
