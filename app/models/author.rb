@@ -56,4 +56,16 @@ class Author < ActiveRecord::Base
   def all_book_titles
     books.map(&:title)
   end
+
+  def all_genre_names
+    books.map(&:genres).flatten.uniq.map(&:name)
+  end
+
+  def all_genre_counts
+    all_genre_names.tally
+  end
+
+  def self.with_books_published_after(year)
+    Book.all.where('published_year > ?', year).map(&:author).uniq
+  end
 end
