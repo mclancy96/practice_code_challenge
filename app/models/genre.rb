@@ -63,6 +63,14 @@ class Genre < ActiveRecord::Base
   end
 
   def self.with_no_authors
-    Genre.all.select { |genre| genre.author_count.is_zero? }
+    Genre.all.select { |genre| genre.author_count.zero? }
+  end
+
+  def all_author_names
+    authors.map(&:name)
+  end
+
+  def self.with_books_published_before(year)
+    Book.published_before(year).flat_map(&:genres).uniq
   end
 end
