@@ -17,13 +17,7 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    bundle install
    ```
 
-2. **Create the database:**
-
-   ```sh
-   bundle exec rake db:create
-   ```
-
-3. **Create your migrations:**
+2. **Create your migrations:**
 
    - You are responsible for writing all migration files in `db/migrate/`.
    - At a minimum, create tables for:
@@ -38,10 +32,18 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      bundle exec rake db:create_migration NAME=create_authors
      ```
 
-4. **Run your migrations:**
+3. **Run your migrations:**
 
    ```sh
    bundle exec rake db:migrate
+   ```
+
+4. **Set up the test database:**
+
+   Before running tests, make sure your test database is set up with the same migrations:
+
+   ```sh
+   RACK_ENV=test bundle exec rake db:migrate
    ```
 
 5. **Seed the database:**
@@ -57,6 +59,13 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    ```sh
    bundle exec rake console
    ```
+
+---
+
+## Troubleshooting
+
+- **"Table doesn't exist" errors when running tests**: Make sure you've run migrations in the test environment with `RACK_ENV=test bundle exec rake db:migrate`
+- **Database-related errors**: SQLite databases are created automatically when migrations are run, so you don't need to create them manually
 
 ---
 
