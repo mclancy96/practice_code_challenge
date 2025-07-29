@@ -16,7 +16,6 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    ```sh
    bundle install
    ```
-
 2. **Create your migrations:**
 
    - You are responsible for writing all migration files in `db/migrate/`.
@@ -31,13 +30,11 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      ```sh
      bundle exec rake db:create_migration NAME=create_authors
      ```
-
 3. **Run your migrations:**
 
    ```sh
    bundle exec rake db:migrate
    ```
-
 4. **Set up the test database:**
 
    Before running tests, make sure your test database is set up with the same migrations:
@@ -45,7 +42,6 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
    ```sh
    RACK_ENV=test bundle exec rake db:migrate
    ```
-
 5. **Seed the database:**
 
    - Edit `db/seeds.rb` to add sample data for all tables and associations.
@@ -53,7 +49,6 @@ Welcome! This repository is designed to help you practice and master Ruby and Ac
      ```sh
      bundle exec rake db:seed
      ```
-
 6. **Start an interactive console:**
 
    ```sh
@@ -149,8 +144,8 @@ For each model, implement the following methods. These are designed to cover a w
 
 Tests exist for these methods in their respective model's spec file. Uncomment them if you'd like to attempt them. Otherwise, leave them commented out to continue with the less advanced methods.
 
-- Author: `#all_genre_names`, `#all_genre_counts`, `.with_books_published_after(year)`, `.with_no_books`, `#first_book`, `#last_book`, `.with_books_in_genre(genre_name)`
-- Book: `.published_before(year)`, `.published_after(year)`, `#genre_count`, `.with_multiple_genres`, `#co_authors`, `.without_genre(genre_name)`, `#all_genre_names`, `.by_title(title)`
+- Author: `#all_genre_names`, `#all_genre_counts`, `.with_books_published_after(year)`
+- Book: `.published_before(year)`, `.published_after(year)`, `#genre_count`, `.with_multiple_genres`, `.without_genre(genre_name)`, `#all_genre_names`, `.by_title(title)`
 - Genre: `.with_only_one_book`, `.with_no_authors`, `#all_author_names`, `.with_books_published_before(year)`,`.with_no_books`, `#all_book_titles`, `.with_author(author_name)`
 
 ---

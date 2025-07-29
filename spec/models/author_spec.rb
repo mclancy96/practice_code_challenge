@@ -106,27 +106,26 @@ RSpec.describe Author do
       expect(author.all_book_titles).to match_array([book1.title, book2.title, book3.title])
     end
   end
+  # Advanced/Bonus Methods
+
+  # describe '#all_genre_names' do
+  #   it 'returns an array of all unique genre names for this author' do
+  #     expect(author.all_genre_names).to match_array([genre1.name, genre2.name])
+  #   end
+  # end
+
+  # describe '#all_genre_counts' do
+  #   it 'returns a hash of genre name => count for this author' do
+  #     result = author.all_genre_counts
+  #     expect(result).to be_a(Hash)
+  #     expect(result.keys).to include(genre1.name, genre2.name)
+  #   end
+  # end
+
+  # describe '.with_books_published_after' do
+  #   it 'returns all authors with books published after a given year' do
+  #     # This test assumes a published_at or year column exists
+  #     expect(Author.with_books_published_after(2000)).to be_a(Array)
+  #   end
+  # end
 end
-
-# Advanced/Bonus Methods
-
-# describe '#all_genre_names' do
-#   it 'returns an array of all unique genre names for this author' do
-#     expect(author.all_genre_names).to match_array([genre1.name, genre2.name])
-#   end
-# end
-
-# describe '#all_genre_counts' do
-#   it 'returns a hash of genre name => count for this author' do
-#     result = author.all_genre_counts
-#     expect(result).to be_a(Hash)
-#     expect(result.keys).to include(genre1.name, genre2.name)
-#   end
-# end
-
-# describe '.with_books_published_after' do
-#   it 'returns all authors with books published after a given year' do
-#     # This test assumes a published_at or year column exists
-#     expect(Author.with_books_published_after(2000)).to be_a(Array)
-#   end
-# end
